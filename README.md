@@ -77,16 +77,7 @@ This project is a Django-based web application aimed at reducing the spread of g
     For production, use PostgreSQL:
 
     ```python
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'your_db_name',
-            'USER': 'your_db_user',
-            'PASSWORD': 'your_db_password',
-            'HOST': 'your_db_host',
-            'PORT': 'your_db_port',
-        }
-    }
+  use render database
     ```
 
 5. **Run database migrations:**
