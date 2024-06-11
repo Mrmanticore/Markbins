@@ -174,7 +174,7 @@ def video_tutorial_view(request):
 
 def about_view(request):
     # Your view logic here
-    return render(request, 'about.html')  
+    return render(request, 'About.html')  
 
 def contact_view(request):
     # Your view logic here
