@@ -119,12 +119,24 @@ This project is a Django-based web application aimed at reducing the spread of g
     ```
 
 ### Deploying to Render
+Manual deployment
+Create a new PostgreSQL database on Render. Copy its internal database URL for now—you’ll need it later.
+
+Create a new web service on Render, pointing it to your project’s GitHub/GitLab/Bitbucket repository (give Render permission to access it if you haven’t already).
+
+Select Python for the runtime and set the following properties (replace mysite with your project’s name):
+
+Property	Value
+Build Command	./build.sh
+Start Command	python -m gunicorn mysite.asgi:application -k uvicorn.workers.UvicornWorker
 
 1. **Install Render CLI:**
 
     ```bash
     pip install render-cli
+python -m gunicorn pro_marks.asgi:application -k uvicorn.workers.UvicornWorker
     ```
+
 
 2. **Configure Render database URL:**
 

@@ -1,10 +1,10 @@
 imp.json
 .venv
 lens
-*.txt
+
 .env
 my.txt
-*txt
+*.txt
 readme.txt
 # Ignore the mystuff folder and its contents
 mystuff/
@@ -14,3 +14,4 @@ finalbin/
 # dotenv
 .env
 .env.*
+!requirements.txt
