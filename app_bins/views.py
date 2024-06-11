@@ -170,7 +170,7 @@ def blogs_view(request):
 
 def video_tutorial_view(request):
     # Your view logic here
-    return render(request, 'video_tutorial.html')  
+    return render(request, 'VideoTutorial.html')  
 
 def about_view(request):
     # Your view logic here
