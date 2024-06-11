@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+	<link rel="stylesheet" href="design/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	
+	<link rel="stylesheet" href="{% static 'css/contact-1.css' %}">
+	<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	<header>
+		<nav class="nav-bar">
+		  <div class="logo-container">
+			<a href="{% url 'home' %}">
+				<div class="logo-text">
+					<img class="logo" src="{% static 'images/nav/BIn.svg' %}" width="60" height="60" alt="MarkBins Logo">
+					<span class="text">MarkBins</span>
+				</div>
+			</a>
+		</div>
+			</div>
+			<ul class="list-nav-bar active" role="navigation">
+			  <li class="list-item"><a href="{% url 'home' %}">Home</a></li>
+  
+			  <li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+			  <li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+			  <li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+			  <li class="list-item"><a href="{% url 'about' %}">About</a></li>
+			  <li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+		  </ul>
+			<div class="fas burger-menu" id="burger-menu">&#9776;</div>
+		</nav>
+	</header>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="{% static 'images/contact/img-01.png' %}" alt="IMG">
+			</div>
+			<form class="contact1-form validate-form" method="post" action="{% url 'submit_contact_form' %}">
+                {% csrf_token %}
+                <span class="contact1-form-title">
+                    Get in touch
+                </span>
+                {% if success %}
+                <div id="success-alert" class="alert alert-success" role="alert">
+                  Thank you for contacting us. We will get back to you shortly.
+				</div>
+                {% endif %}
+                {{ form.as_p }}
+                <div class="container-contact1-form-btn">
+                    <button class="contact1-form-btn" type="submit">
+                        <span>
+                            Send 
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+			
+
+	
+		</div>
+	</div>
+
+	<hr>
+	
+    <section class="footer-sec">
+        <footer>
+            <div class="footer-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col item social">
+                            <a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a>
+                            <a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                            <a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">Markbins © 2024</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+	<script src="{% static 'Js/nav.js' %}"></script>
+
+</body>
+</html>

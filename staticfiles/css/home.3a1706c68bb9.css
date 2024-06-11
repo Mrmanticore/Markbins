@@ -1,0 +1,250 @@
+
+.frame-child {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+/* Adjustments for the parent container */
+.home-eco-swap-inner {
+    width: 148px;
+    height: 148px;
+    border-radius: 99px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+/* Adjustments for the absolute positioned elements */
+
+.frame-item {
+    position: absolute;
+   
+    top: 342px;
+    left: 155px;
+    width: 269.4px;
+    height: 316px;
+}
+
+.frame-inner {
+    position: absolute;
+    top: 287px;
+    left: 1194.5px;
+    width: 329px;
+    height: 383px;
+}
+
+.frame-icon,
+.group-icon {
+    position: absolute;
+    top: 589px;
+    left: 890px;
+    width: 148px;
+    height: 151px;
+}
+
+.frame-child1 {
+    position: absolute;
+    left: 660.3px;
+    top: 589px;
+    width: 148px;
+    height: 151px;
+}
+
+
+.frame-icon {
+    top: 554px;
+    left: 0px;
+    width: 1800px; /* Set the desired width */
+    height: 169px;
+    overflow: hidden;
+    z-index: 3;
+
+    background-repeat: repeat-x; /* Repeat the image horizontally */
+}
+
+.frame-div {
+    position: absolute;
+    top: 0;
+    left: 437px;
+    filter: blur(139px);
+    border-radius: 999px;
+    background: radial-gradient(50% 50%at 50% 50%, #f1e811, rgba(224, 252, 109, 0.58));
+    width: 600px;
+    height: 600px;
+    z-index: 2;
+}
+
+/* Adjustments for the parent container */
+.frame-parent {
+    width: 100%;
+    height: 720px;
+    position: absolute;
+    margin: 0 !important; /* Removed margin */
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Styling for the markbins class */
+.markbins {
+    color: #6562ff;
+}
+
+hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: #6562ff; /* Set the color of the line */
+    margin: 20px 0; /* Add margin above and below the line */
+    border-width: 0 0 2px;
+
+}
+
+/* Styling for the heading */
+.join-the-green-container {
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25)); /* Add drop shadow */
+    margin: 0;
+    width: 855px;
+    font-size: inherit;
+    line-height: 115.5%;
+    font-weight: 700;
+    font-family: inherit;
+    position: relative;
+    top: 35px; 
+    display: inline-block;
+    max-width: 100%;
+    z-index: 3;
+    position: relative;
+    max-width: 100%;
+
+
+
+
+}
+
+/* Styling for the text content */
+.swap-items-reduce {
+    flex: 1;
+    line-height: 36px;
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    z-index: 10;
+    top: 83px; 
+
+
+}
+
+/* Styling for the main container */
+.home-eco-swap,
+.swap-items-reduce-waste-and-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* Adjustments for the container */
+.swap-items-reduce-waste-and-wrapper {
+    width: 858px;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 50px 0 47px;
+    max-width: 100%;
+    font-size: 30px;
+    color: rgb(8, 8, 8);
+    font-family: var(--font-inter);
+}
+
+/* Adjustments for the main container */
+.home-eco-swap {
+    width: 100%;
+    position: relative;
+    background: linear-gradient(#cf0, #cf0),
+      radial-gradient(50% 50%at 50% 50%, rgba(28, 255, 51, 0.74), #0de622 73.01%, #00e617);
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    padding: 229px 20px 337px;
+    gap: 24px;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    font-size: 64px;
+    color: #121212;
+    font-family: var(--font-sora);
+}
+/*sections */
+.get-start-button {
+    background-color: rgb(5, 0, 252);
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-top: -20px; /* Move the button 20 pixels upward */
+
+}
+
+.get-start-button:hover {
+    background-color: rgb(5, 0, 252, 0.8); /* Darker color on hover */
+}
+
+/* for quote */
+.cleanliness-section {
+    background: linear-gradient(#cf0, #cf0), radial-gradient(50% 50% at 50% 50%, rgba(28, 255, 51, 0.74), #0de622 73.01%, #00e617); /* Background color for the section */
+
+    /* background-color: #f9f9f9; */
+    padding: 50px 0; /* Padding around the quote section */
+}
+
+.container {
+    max-width: 800px; /* Limit the width of the quote container */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center-align the text within the container */
+}
+
+.quote {
+    font-family: 'Arial', sans-serif; /* Font family for the quote */
+    font-size: 24px; /* Font size for the quote */
+    font-style: italic; /* Italicize the quote */
+    color: rgb(5, 0, 252, 0.8); /* Text color for the quote */
+}
+
+.quote p {
+    margin-bottom: 10px; /* Add spacing between lines */
+}
+@media screen and (max-width: 578px) {
+    .join-the-green-container {
+        font-size: 38px;
+        line-height: 44px;
+    }
+    .swap-items-reduce {
+        font-size: 19px;
+        line-height: 29px;
+    }
+    .report-container-parent {
+        gap: 48px 24px;
+    }
+    
+    .feature-detail {
+        gap: 48px 24px;
+    }
+    
+    .website-layout {
+        gap: 30px 60px;
+    }
+
+    .frame-icon {
+        display: none;
+    }
+
+
+}

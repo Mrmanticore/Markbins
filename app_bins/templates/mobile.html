@@ -1,0 +1,189 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap"/>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"/>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/getmobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo-container">
+                <a href="{% url 'home' %}">
+                    <div class="logo-text">
+                        <img class="logo" src="{% static 'images/nav/BIn.svg' %}" width="60" height="60" alt="MarkBins Logo">
+                        <span class="text">MarkBins</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="list-nav-bar active" role="navigation">
+
+                <li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+                <li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+                <li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+                <li class="list-item"><a href="{% url 'about' %}">About</a></li>
+                <li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+            </ul>
+            <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="home-eco-swap">
+            <div class="home-eco-swap-inner">
+                <div class="frame-child"></div>
+            </div>
+            <hr>
+            <h1 class="join-the-green-container">
+                <span>Join the Green Revolution with </span>
+                <span class="markbins">MarkBins</span>
+            </h1>
+            <div class="swap-items-reduce-waste-and-wrapper">
+                <div class="swap-items-reduce">
+                    Reduce waste and embrace a greener lifestyle. Together, we make a difference in keeping our streets clean and our environment.
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <div class="website-layout">
+        <section class="report-container">
+            <div class="report-content">
+                <p class="report-title report-garbage-title">Report Garbage</p>
+                <p class="report-description">
+                    MarkBins, your digital solution to combat street litter and promote cleaner communities! With our platform, you can easily report garbage hotspots by uploading photos and pinpointing their exact locations with latitude and longitude coordinates. Our integrated Twitter bot ensures swift action by tagging municipal authorities for prompt cleanup. Together, let's tackle the scourge of open garbage on our streets and create a healthier environment for all. Click 'Get Started' below to begin your journey toward cleaner, greener neighborhoods.
+                </p>
+                <button class="get-start-button" onclick="window.location.href='{% url 'markbins' %}'">Get Started</button>
+            </div>
+        </section>
+        <section class="report-container">
+            <div class="report-content">
+                <p class="report-title report-potholes-title">Report Potholes</p>
+                <p class="report-description">
+                    SpotFill! We're on a mission to make your commute smoother by tackling potholes head-on. With SpotFill, reporting potholes is as easy as snapping a photo and pinpointing the location. Our platform swiftly notifies authorities, including @mybmcroads, ensuring prompt repairs and safer roads for all. Potholes aren't just inconvenient; they pose serious risks to motorists, cyclists, and pedestrians, causing accidents and vehicle damage. By reporting potholes with SpotFill, you're not just addressing a nuisance; you're contributing to safer, more efficient transportation networks and fostering a better quality of life in our communities. Let's work together to fill those spots and pave the way for smoother journeys ahead!
+                </p>
+                <button class="get-start-button" onclick="window.location.href='{% url 'spotfill' %}'">Get Started</button>
+            </div>
+        </section>
+    </div>
+    
+    <hr>
+    <section class="cleanliness-section">
+        <div class="container">
+            <div class="quote">
+                <p>"Cleanliness is next to godliness."</p>
+                <p>- Sant Gadge Maharaj</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="images-gallery">
+        <div class="gallery">
+            <img src="{% static 'images/sec-2/garbage1.jpeg' %}" alt="Cinque Terre" width="600" height="400">
+            <div class="desc">Spread Garbage</div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'images/sec-2/Beacha.jpeg' %}" alt="Forest" width="600" height="400">
+            <div class="desc">Marine Debris </div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'images/sec-2/Potholes.jpeg' %}" alt="lol" width="600" height="400">
+            <div class="desc">Potholes</div>
+        </div>
+        <div class="gallery">
+            <img src="{% static 'images/sec-2/una.jpeg' %}" alt="Cinque Terre" width="600" height="400">
+            <div class="desc">Unsegregated Waste</div>
+        </div>
+    </section>
+    <hr>
+    <section class="logo-section">
+        <h2 class="inspired-heading">Inspired BY </h2>
+        <div class="full-gallery">
+            <div class="image-gallery">
+                <div class="gallery-items">
+                    <div class="item">
+                        <img src="{% static 'images/icons/recycles.png' %}" class="circle-img">
+                        <div class="item-title">
+                            <div class="transparent-back"></div>
+                            <div class="title-text"><p>Recycle India Foundation</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-items">
+                    <div class="item">
+                        <img src="{% static 'images/icons/green.png' %}">
+                        <div class="item-title">
+                            <div class="transparent-back"></div>
+                            <div class="title-text"><p>Green Mumbai</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-items">
+                    <div class="item">
+                        <img src="{% static 'images/icons/swach1.jpg' %}" class="circle-img">
+                        <div class="item-title">
+                            <div class="transparent-back"></div>
+                            <div class="title-text"><p>Swatch Bharat Abhiyan</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="footer-sec">
+        <footer>
+            <div class="footer-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col item social">
+                            <a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a>
+                            <a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                            <a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a>
+
+
+                        </div>
+                    </div>
+                    <p class="copyright">Markbins © 2024</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    
+
+    <script>
+        function checkScreenWidth() {
+            if (window.innerWidth > 578) {
+                window.location.href = "{% url 'home' %}";
+            }
+        }
+
+        // Call the checkScreenWidth function when the window loads and on resize
+        window.onload = checkScreenWidth;
+        window.onresize = checkScreenWidth;
+    </script>
+    <script src="{% static 'Js/nav.js' %}"></script>
+
+</body>
+</html>

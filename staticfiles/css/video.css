@@ -1,0 +1,43 @@
+body, html {
+    margin: 50px    ;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 20px;
+    color:  rgb(5, 0, 255);
+}
+hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: #6562ff; /* Set the color of the line */
+    margin: 20px 0; /* Add margin above and below the line */
+    border-width: 0 0 2px;
+
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {
+    margin-bottom: 30px;
+}
+
+.video h2 {
+    margin-top: 0;
+}
+
+iframe {
+    border: none;
+}

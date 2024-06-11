@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+    <style>
+        .gallery-container {
+            max-width: 800px;
+            margin: 70px auto;
+            padding: 20px;
+        }
+        .gallery-heading {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .gallery-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .email-text {
+            font-size: 23px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .gallery-image {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo-container">
+                <a href="{% url 'home' %}">
+                    <div class="logo-text">
+                        <img class="logo" src="{% static 'images/nav/BIn.svg' %}" width="60" height="60" alt="MarkBins Logo">
+                        <span class="text">MarkBins</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="list-nav-bar active" role="navigation">
+                <li class="list-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+                <li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+                <li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+                <li class="list-item"><a href="{% url 'about' %}">About</a></li>
+                <li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+            </ul>
+            <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+
+    <div class="gallery-container">
+        <h2 class="gallery-heading">Guide</h2>
+        <section class="gallery-section">
+            <p class="email-text">Step-1</p>
+            <img class="gallery-image" src="{% static 'images/Guide/new-step-1.jpg' %}" alt="Image 1">
+        </section>
+        <section class="gallery-section">
+            <p class="email-text">Step-2</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step-2.jpg' %}" alt="Image 2">
+        </section> 
+        <section class="gallery-section">
+            <p class="email-text">Step-3</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step-3.jpg' %}" alt="Image 3">
+        </section>
+        <section class="gallery-section">
+            <p class="email-text">Step-4</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step-4.jpg' %}" alt="Image 4">
+        </section>
+        <section class="gallery-section">
+            <p class="email-text">Step-5</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step-5.jpg' %}" alt="Image 5">
+        </section>
+        <section class="gallery-section">
+            <p class="email-text">Step-6</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step--6.jpg' %}" alt="Image 6">
+        </section>
+        <section class="gallery-section">
+            <p class="email-text">Step-7</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step-7.jpg' %}" alt="Image 7">
+        </section>
+        <section class="gallery-section">
+            <p class="email-text">Step-8</p>
+            <img class="gallery-image" src="{% static 'images/Guide/Step8.jpg' %}" alt="Image 8">
+        </section>
+    </div>
+    <hr>
+    <section class="footer-sec">
+        <footer>
+            <div class="footer-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col item social">
+                            <a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a>
+                            <a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                            <a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">Markbins © 2024</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <script src="{% static 'Js/nav.js' %}"></script>
+
+</body>
+</html>

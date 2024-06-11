@@ -1,0 +1,358 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display User Location with Accuracy</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/leaflet.css' %}"> -->
+    <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/Mrmanticore/leaflet.css/1ea4d2079116af117bf785dada4630934d0edf02/leaflet.css" /> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" ></script>
+
+    <link rel="stylesheet" href="{% static 'css/new_nav.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+</head>
+
+        <nav class="nav-bar" style="position: relative;">
+            <div class="logo-container">
+            <a href="{% url 'home' %}">
+                <div class="logo-text">
+                    <img class="logo" src="{% static 'images/nav/BIn.svg' %}" width="60" height="60" alt="MarkBins Logo">
+                    <span class="text">MarkBins</span>
+                </div>
+            </a>
+        </div>
+            </div>
+            <ul class="list-nav-bar active" role="navigation">
+              <li class="list-item"><a href="{% url 'home' %}">Home</a></li>
+  
+              <li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+              <li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+              <li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+              <li class="list-item"><a href="{% url 'about' %}">About</a></li>
+              <li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+          </ul>
+            <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+<body>
+    {% comment %} <div id="map" style="height: 00px;"></div> {% endcomment %}
+    <div id="map" style="height: 400px; margin-top: 2px;"></div>
+
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+    <p>Accuracy: <span id="accuracy"></span> meters (approximately)</p>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="getLocation()">Get Location</button>
+    <button onclick="captureMap()">Capture Map</button>
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+
+    
+   
+    <script>
+        var map = L.map('map').setView([0, 0], 15); 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png ').addTo(map);
+
+        // Global variables for marker and circle
+        var marker = null;
+        var accuracyCircle = null;
+
+        function showMap(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            document.getElementById("latitude").textContent = latitude;
+            document.getElementById("longitude").textContent = longitude;
+            document.getElementById("accuracy").textContent = position.coords.accuracy; 
+
+            // Remove existing marker and circle if they exist
+            if (marker) map.removeLayer(marker);
+            if (accuracyCircle) map.removeLayer(accuracyCircle);
+
+            // Create new marker and circle
+            marker = L.marker([latitude, longitude], { draggable: true }).addTo(map);
+            accuracyCircle = L.circle([latitude, longitude], {
+                radius: position.coords.accuracy,
+                fillColor: 'blue',
+                color: 'blue',
+                opacity: 0.5
+            }).addTo(map);
+
+            map.setView([latitude, longitude], 15); 
+
+            // Update lat/lng when the marker is dragged
+            marker.on('dragend', function() {
+                var newPosition = marker.getLatLng(); 
+                document.getElementById("latitude").textContent = newPosition.lat;
+                document.getElementById("longitude").textContent = newPosition.lng;
+            });
+        }
+
+        function showError(error) {
+            console.log(error.message);
+            // You might want to display an error message to the user here
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showMap, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function captureMap() {
+    domtoimage.toJpeg(map.getContainer(), { quality: 0.95 })
+        .then(function (dataUrl) {
+            var formData = new FormData();
+            var blob = dataURLtoBlob(dataUrl);
+            formData.append('image', blob, 'map_capture.jpg');
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/capture-map/', true);
+            xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success_message) {
+                        alert(response.success_message);
+                    } else {
+                        console.error('Failed to upload image:', response.error_message);
+                    }
+                }
+            };
+            xhr.send(formData);
+        })
+        .catch(function (error) {
+            console.error('Error generating screenshot:', error);
+        });
+}
+function dataURLtoBlob(dataURL) {
+    var parts = dataURL.split(';base64,');
+    var contentType = parts[0].split(':')[1];
+    var raw = window.atob(parts[1]);
+    var rawLength = raw.length;
+    var uInt8Array = new Uint8Array(rawLength);
+    for (var i = 0; i < rawLength; ++i) {
+        uInt8Array[i] = raw.charCodeAt(i);
+    }
+    return new Blob([uInt8Array], { type: contentType });
+}
+
+        // Handle file input change
+        document.getElementById('imageInput').addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            if (!file) return;
+        
+            var formData = new FormData();
+            formData.append('image', file);
+            // Add other data as needed e.g., formData.append('location', map.getCenter());
+        
+            fetch('/upload-image/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Image saved successfully. You might receive the saved image's path back to display on the map.
+                    console.log('Image uploaded and saved!');
+                } else {
+                    console.error('Error saving image');
+                }
+            });
+        });
+        // Inside the showMap function
+
+
+
+    </script>
+
+    <!-- Your existing home page content here -->
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .tweet {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .tweet:hover {
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        #tweetContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #tweetSelected {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="tweet" id="tweet1">Residents urge @mybmlc to clean up the garbage at [Location]. Help us keep our area clean and healthy! Latitude: [Latitude] Longitude: [Longitude]</div>
+    <div class="tweet" id="tweet2">Dear @mybmcl, we need your immediate attention to clean up the overflowing trash in our neighborhood. Let's work together for a cleaner environment! Location: [Location] Lat: [Lat] Long: [Long] </div>
+    <div class="tweet" id="tweet3">To @mybmc officials: Please address the garbage issue at [Location] promptly. Let's make our community cleaner and safer! Latitude: [Latitude] Longitude: [Longitude]</div>
+    <div class="tweet" id="tweet4">Calling @mybmc to take action on the garbage buildup at [Location]. A clean neighborhood is a healthy neighborhood! Lat: [Lat] Long: [Long]</div>
+</div>
+<div id="tweetContainer">
+    <div id="tweetSelected"></div>
+
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" name="emailInput" placeholder="Enter your email" required>
+    <button id="submitButton" onclick="submitTweet()">Submit Tweet</button>
+</div>
+
+<script>
+    const geocodingCache = {}; // Simple cache
+
+function getTownName(latitude, longitude) {
+  const cacheKey = `${latitude},${longitude}`;
+
+  if (geocodingCache[cacheKey]) {
+    return Promise.resolve(geocodingCache[cacheKey]); // Return from cache
+  }
+
+  // If not in cache, fetch from Nominatim API
+  return fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network error: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Prioritize 'city' or 'town', fallback to 'village', etc.
+      const townName = data.address.city || data.address.town || data.address.village || 'Location';
+      geocodingCache[cacheKey] = townName; // Store in cache
+      return townName;
+    })
+    .catch(error => {
+      console.error('Error fetching town name:', error);
+      return 'Location'; // Return a placeholder
+    });
+}
+
+let selectedTweet = ''; // Global variable to store the selected tweet
+
+function displayTweet(tweetId) {
+  var tweet = document.getElementById(tweetId).textContent;
+  var latitude = document.getElementById('latitude').textContent;
+  var longitude = document.getElementById('longitude').textContent;
+  
+  getTownName(latitude, longitude)
+    .then(townName => {
+      tweet = tweet.replace('[Location]', townName);
+      tweet = tweet.replace('[Latitude]', latitude);
+      tweet = tweet.replace('[Longitude]', longitude);
+      
+      var directionsLink = `<a href="https://graphhopper.com/maps/?point=${latitude},${longitude}&point=&vehicle=car&locale=en-US&use_miles=false&layer=Omniscale" target="_blank">Get Directions</a>`;
+
+      selectedTweet = tweet + '<br>' + directionsLink; // Store the formatted tweet
+      document.getElementById('tweetSelected').innerHTML = selectedTweet;
+    });
+}
+
+function submitTweet() {
+    var tweet = selectedTweet;
+    var email = document.getElementById('emailInput').value;
+
+    // Check if both tweet and email are filled out
+    if (!tweet || !email) {
+        alert('Please select a tweet and enter your email.');
+        return;
+    }
+
+    // Use AJAX to send the data to your Django view
+    fetch('/submit-tweet/', {  // Update the URL to your Django endpoint
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // Include CSRF token
+        },
+        body: JSON.stringify({ tweet: tweet, email: email }),
+        credentials: 'include', // Include cookies in the request
+    })
+    .then(response => {
+        if (response.ok) {
+            // Handle successful submission (e.g., display a success message)
+            console.log('Tweet submitted successfully!');
+        } else {
+            // Handle error
+            console.error('Error submitting tweet:', response.status);
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting tweet:', error);
+    });
+}
+
+
+
+
+document.getElementById('tweet1').addEventListener('click', function() { displayTweet('tweet1'); });
+document.getElementById('tweet2').addEventListener('click', function() { displayTweet('tweet2'); });
+document.getElementById('tweet3').addEventListener('click', function() { displayTweet('tweet3'); });
+document.getElementById('tweet4').addEventListener('click', function() { displayTweet('tweet4'); });
+
+</script>
+<hr>
+<section class="footer-sec">
+    <footer>
+        <div class="footer-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col item social">
+                        <a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a>
+                        <a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                        <a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Markbins © 2024</p>
+            </div>
+        </div>
+    </footer>
+</section>
+<script src="{% static 'Js/nav.js' %}"></script>
+
+</body>
+</html>
+

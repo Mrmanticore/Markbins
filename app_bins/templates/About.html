@@ -1,0 +1,112 @@
+{% load static %}
+
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Fload Image Around Image WIth Box Shadow and Border</title>
+	<link rel="stylesheet" href="{% static 'css/About.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+	<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+
+    <!-- Include Sora font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
+</head>
+<style>
+	.footer-dark {
+		padding: 300px 0;
+		color:rgb(5, 0, 255);;
+		background-color: #fffcfc;
+		/* font-weight: bold; */
+	
+	
+	
+	}
+</style>
+<header>
+	<nav class="nav-bar">
+		<div class="logo-container">
+			<a href="{% url 'home' %}">
+				<div class="logo-text">
+					<img class="logo" src="{% static 'images/nav/BIn.svg' %}" width="60" height="60" alt="MarkBins Logo">
+					<span class="text">MarkBins</span>
+				</div>
+			</a>
+		</div>
+		<ul class="list-nav-bar active" role="navigation">
+			<li class="list-item"><a href="{% url 'home' %}">Home</a></li>
+			<li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+			<li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+			<li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+			<li class="list-item"><a href="{% url 'about' %}">About</a></li>
+			<li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+		</ul>
+		<div class="fas burger-menu" id="burger-menu">&#9776;</div>
+	</nav>
+</header>
+<body>
+	<div class="about-section">
+		<h1>About Us </h1>
+		<p>MarkBins was created out of a deep concern for the growing waste management problem in Mumbai. Seeing trash everywhere, I knew I needed to find a solution that tackles not just the visible mess but also the effects on society and the environment, specifically designed for Mumbai. I understand how unchecked waste can affect us all - from the unpleasant smell that affects our daily lives to diseases that can endanger public health. I also can't ignore the suffering of street animals who are forced to search for food among the garbage, which often leads to sickness.
+
+			At MarkBins, I'm dedicated to reducing the problems caused by waste pollution in Mumbai. I understand that this issue is complex and tied to many other problems. My goal is not just to clean up the mess, but to create a better society and environment overall. I believe in the power of technology to help people make a change, offering a platform to report and deal with waste in their local areas.
+			
+			My platform allows users to take pictures of areas filled with litter in Mumbai, providing important information like the location. But my goal goes beyond just providing a technical solution - I believe in the power of people working together to make progress. By helping citizens communicate with the Brihanmumbai Municipal Corporation (BMC), we can turn awareness into action and work together to fight waste pollution.
+			
+			MarkBins is more than just a tool for change, it's a symbol of hope for Mumbai. It shows what I can achieve when I use my creativity and kindness to overcome challenges specific to this city. It's about breaking through indifference to create a cleaner, healthier future for everyone in Mumbai. As I deal with the complexities of the modern world, I need to face these challenges head-on, with determination. MarkBins is a testament to my commitment to this important cause, and a rallying cry for anyone in Mumbai who shares my vision of a city free from the problems of waste pollution.
+			
+			Spot Fill from MarkBins lets users report litter-filled spots for quick cleanup. Using Spot Fill, you can help your community by taking pictures of trashy areas and sharing their location. This handy tool helps people and local authorities work together to fight waste pollution. Use Spot Fill, help make a cleaner, healthier world for everyone.</p>
+	</div>
+
+	<div class="container">
+		<section>
+			<div class="thumbanail right">
+				<img src="{% static 'images/about/misii.png' %}" alt="" />
+				
+			</div>
+			<h1>Mission</h1>
+			<p>
+				At MarkBins, our overarching mission is to bring about a revolution in the way waste management is handled in the bustling city of Mumbai. We aim to provide an innovative, user-friendly platform that allows citizens to report and effectively address issues related to garbage and waste. Our goal is to empower every individual, giving them the tools and resources to take direct action against the prevalent issue of waste pollution. By doing so, we believe we can contribute to fostering a cleaner, healthier, and more sustainable environment for not only the current residents of Mumbai but also for the generations yet to come.		</section>
+
+		<section>
+			<div class="thumbanail left">
+				<img src="{% static '/images/about/vision.svg' %}" alt="" />
+
+
+			</div>
+			<h1>Vision</h1>
+			<p>
+				Our vision is a future where clean streets and sustainable waste management practices are not just an aspiration, but the norm in Mumbai. We endeavor to create a city where every citizen is actively engaged in the process of waste management, where they work in harmony with local authorities to maintain cleanliness and promote green practices. We envision a Mumbai where every street, every neighborhood, every corner is clean and green. Leveraging the power of technology and the spirit of community collaboration, we aim to transform the urban landscape of Mumbai. Our goal is to turn Mumbai into a shining beacon of effective waste management and environmental stewardship, setting an example for other cities to follow.			</p>
+		</section>
+
+	</div>
+    <section class="footer-sec">
+        <footer>
+            <div class="footer-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col item social">
+                            <a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a>
+                            <a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                            <a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">Markbins © 2024</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+   
+
+
+    <script src="{% static 'Js/nav.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+
+
+.blank-line {
+  margin: 40px;
+}
+
+.report-garbage {
+  margin: -90px;
+  font-size: 36px;
+  color: rgb(5, 0, 255);
+  font-family: abeezee;
+
+
+}
+hr {
+  border: none; /* Remove default border */
+  height: 1px; /* Set the height of the line */
+  background-color: #6562ff; /* Set the color of the line */
+  margin: 20px 0; /* Add margin above and below the line */
+  border-width: 0 0 2px;
+
+}
+
+.report-garbage-this-container {
+  align-self: stretch;
+  position: relative;
+  text-transform: capitalize;
+  display: block;
+  width: auto;
+}
+
+.report-garbage-this-container:hover {
+  font-family: inter;
+  text-align: center;
+  color: var(--color-black);
+  display: block;
+  align-self: stretch;
+  width: auto;
+}
+
+.report-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0px 0px;
+  box-sizing: border-box;
+  min-width: 254;
+  max-width: 100%;
+  height: auto;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+}
+
+
+
+.image-placeholder-icon {
+  width: 490px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  display: flex;
+  padding-left: 79px;
+}
+
+
+
+.report-container-parent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-25xl);
+  max-width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-black);
+  font-family: inter;
+}
+
+
+
+.pothole-report-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-2xs) 0px 0px;
+  box-sizing: border-box;
+  min-width: 254;
+  max-width: 100%;
+  height: auto;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+}
+
+
+.feature-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-29xl);
+  max-width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+}
+
+
+
+.feature-detail-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px var(--padding-20xl) 0px 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-black);
+  font-family:inter;
+}
+
+
+
+.website-layout {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-17xl) var(--padding-mid) var(--padding-99xl);
+  box-sizing: border-box;
+  gap: var(--gap-41xl);
+  line-height: normal;
+  letter-spacing: normal;
+  height: auto;
+}
+.get-start-button {
+  background-color: rgb(5, 0, 252);
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  font-size: 16px; /* Adjust font size as needed */
+  width: 140px;
+}
+
+.get-start-button:hover {
+  background-color: rgba(5, 0, 252, 0.8); /* Darker color on hover */
+}
+
+
+@media (max-width: 578px) 
+/* {
+  .report-container,
+  .pothole-report-container {
+    padding: var(--padding-4xs) 0;
+  }
+  
+  .feature-detail {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-detail-wrapper {
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .get-start-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+} */
+
+/* ---------------------------------------------------------------------------- */
+{
+
+.report-garbage {
+  margin: -90px;
+  font-size: 36px;
+  color: rgb(202, 18, 156);
+  font-family: abeezee;
+
+
+}
+
+
+.report-garbage-this-container {
+  align-self: stretch;
+  position: relative;
+  text-transform: capitalize;
+  display: block;
+  width: auto;
+}
+
+.report-garbage-this-container:hover {
+  font-family: inter;
+  text-align: center;
+  color: var(--color-black);
+  display: block;
+  align-self: stretch;
+  width: auto;
+}
+
+.report-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0px 0px;
+  box-sizing: border-box;
+  min-width: 254;
+  max-width: 100%;
+  height: auto;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+}
+
+
+
+.image-placeholder-icon {
+  width: 490px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+  display: flex;
+  padding-left: 79px;
+}
+
+
+
+.report-container-parent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 0px 0px var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-25xl);
+  max-width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-black);
+  font-family: inter;
+}
+
+
+
+.pothole-report-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-2xs) 0px 0px;
+  box-sizing: border-box;
+  min-width: 254;
+  max-width: 100%;
+  height: auto;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+}
+
+
+.feature-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-29xl);
+  max-width: 100%;
+  height: auto;
+  transform: rotate(0deg);
+}
+
+
+
+.feature-detail-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px var(--padding-20xl) 0px 0px;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  gap: var(--gap-0);
+  transform: rotate(0deg);
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-black);
+  font-family:inter;
+}
+
+
+
+.website-layout {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-17xl) var(--padding-mid) var(--padding-99xl);
+  box-sizing: border-box;
+  gap: var(--gap-41xl);
+  line-height: normal;
+  letter-spacing: normal;
+  height: auto;
+}
+.get-start-button {
+  background-color: rgb(5, 0, 252);
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px;
+  width: 140px;
+
+}
+
+.get-start-button:hover {
+  background-color: rgba(5, 0, 252, 0.8); 
+}
+.report-garbage {
+  font-size: 24px;
+  margin: -60px;
+}
+
+.report-container,
+.pothole-report-container {
+  min-width: 100%;
+  padding: var(--padding-2xs) 0;
+}
+
+.report-container-parent {
+  gap: var(--gap-5xl);
+}
+
+.website-layout {
+  padding: var(--padding-10xl) var(--padding-xs) var(--padding-50xl);
+  align-items: center;
+}
+
+.get-start-button {
+  width: 100%;
+  font-size: 14px;
+  padding: 12px 0;
+  width: 140px;
+
+}
+
+}
+/* ---------------------------------------------------------------------------------------------------------- */

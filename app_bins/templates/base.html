@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}MarkBins{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <!-- Include Sora font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar" aria-label="Main Navigation">
+            <div class="logo-container">
+                <a href="{% url 'home' %}">
+                    <div class="logo-text">
+                        <img class="logo" src="{% static 'images/nav/BIn.svg' %}" width="60" height="60" alt="MarkBins Logo">
+                        <span class="text">MarkBins</span>
+                    </div>
+                </a>
+            </div>
+            </div>
+            <ul class="list-nav-bar active" role="navigation">
+                {% comment %} <li class="list-item"><a href="{% url 'home' %}">Home</a></li> {% endcomment %}
+
+                <li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+                <li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+                <li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+                <li class="list-item"><a href="{% url 'about' %}">About</a></li>
+                <li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+            </ul>
+            <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+    <main>
+        {% block page_content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <section class="footer-sec">
+            <div class="footer-content">
+                <p class="copyright">Markbins © 2024</p>
+                <ul class="social-links">
+                    <li><a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a></li>
+                    <li><a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'nav.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <!-- Add any additional CSS files here -->
+
+    <!-- Add any additional meta tags or scripts here -->
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+          <div class="logo-container">
+            <a href="{% url 'home' %}">
+                <div class="logo-text">
+                    <img class="logo" src="/static/images/nav/BIn.svg" width="60" height="60" alt="MarkBins Logo">
+                    <span class="text">MarkBins</span>
+                </div>
+            </a>
+        </div>
+            </div>
+            <ul class="list-nav-bar active" role="navigation">
+              <li class="list-item"><a href="{% url 'home' %}">Home</a></li>
+  
+              <li class="list-item"><a href="{% url 'guide' %}">Guide</a></li>
+              <li class="list-item"><a href="{% url 'blogs' %}">Blogs</a></li>
+              <li class="list-item"><a href="{% url 'video_tutorial' %}">Video-Tutorial</a></li>
+              <li class="list-item"><a href="{% url 'about' %}">About</a></li>
+              <li class="list-item"><a href="{% url 'contact' %}">Contact-us</a></li>
+          </ul>
+            <div class="fas burger-menu" id="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="intro my-5">
+            <h2 class="text-center">Blogs</h2>
+            <p class="text-center">Cleaner Environment & Better Waste Management Practices </p>
+        </div>
+        <div class="row articles">
+            <div class="col-sm-6 col-md-4 item">
+                <img class="img-fluid" src="{% static 'images/blogs/blog1.png' %}" alt="Article Image">
+
+                <div class="content">
+                    <h3 class="pt-3 name">How to teach waste management to kids?</h3>
+                    <p class="description">As urbanization in India continues to grow, one of the biggest challenges faced by the municipal corporations is that of waste management.</p>
+                    <a href="https://lumaworld.in/blogs/news/how-to-teach-waste-management-to-kids" class="btn btn-primary read-more">Read More</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 item">
+                <img class="img-fluid" src="{% static 'images/blogs/Waste-Management.jpg' %}" alt="Article Image">
+
+                <div class="content">
+                    <h3 class="pt-3 name">Waste Management: Facts, Challenges & Solutions</h3>
+                    <p class="description">Waste Management in India is overseen by the Union Ministry of Environment, Forests, and Climate Change.</p>
+                    <a href="https://www.nextias.com/blog/waste-management-in-india/" target="_blank" class="btn btn-primary read-more">Read More</a>
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-4 item">
+                <img class="img-fluid" src="{% static 'images/blogs/e-waste.webp' %}" alt="Article Image">
+                <div class="content">
+                    <h3 class="pt-3 name">Repair & recycle, urges new e-waste management policy</h3>
+                    <p class="description">A lot of people have a habit of buying new electronic device ..</p>
+                    <a href="https://timesofindia.indiatimes.com/city/jaipur/repair-recycle-urges-new-e-waste-management-policy/articleshow/100778873.cms" target="_blank" class="btn btn-primary read-more">Read More</a>
+
+
+                </div>
+            </div>
+
+
+            
+            <!-- Add three more columns below -->
+            <div class="col-sm-6 col-md-4 item">
+                <!-- Replace the image URL and content as needed -->
+                <img class="img-fluid" src="{% static 'images/blogs/health.png' %}" alt="Article Image">
+                <div class="content">
+                    <h3 class="pt-3 name">Health hazards and waste management</h3>
+                    <p class="description">Different methods of waste management emit a large number of substances, most in small quantities and at extremely low levels. Raised incidence...</p>
+                    <a href="https://academic.oup.com/bmb/article/68/1/183/421368" target="_blank" class="btn btn-primary read-more">Read More</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 item">
+                <!-- Replace the image URL and content as needed -->
+                <img class="img-fluid" src="{% static 'images/blogs/soil.png' %}" alt="Article Image">
+                <div class="content">
+                    <h3 class="pt-3 name">Solid waste management & Recycling</h3>
+                    <p class="description">Understand the complexities in solid waste management and the  factors affecting the recycling of goods 3 million tonnes of waste discarded in Singapore last year....</p>
+                    <a href="https://sp-sg.libguides.com/c.php?g=924538&p=6676681" target="_blank" class="btn btn-primary read-more">Read More</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 item">
+                <!-- Replace the image URL and content as needed -->
+                <img class="img-fluid" src="{% static 'images/blogs/right_logo.png' %}" alt="Article Image">
+                <div class="content">
+                    <h3 class="pt-3 name">By The Ministry of Environment, Forest & Climate Change</h3>
+                    <p class="description">The Hazardous Substances Management Division (HSMD) is the nodal point withins the...</p>
+                    <a href="https://moef.gov.in/moef/environment/waste-management/index.html" target="_blank" class="btn btn-primary read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <section class="footer-sec">
+        <footer>
+            <div class="footer-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col item social">
+                            <a href="https://twitter.com/Mark__bin"><i class="icon ion-social-twitter"></i></a>
+                            <a href="https://www.instagram.com/markbin_2024/" target="_blank"><i class="icon ion-social-instagram"></i></a>
+                            <a href="https://github.com/yourusername" target="_blank"><i class="icon ion-social-github"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">Markbins © 2024</p>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+</body>
+</html>
+
+
+
+<!-- credit: https://epicbootstrap.com/snippets/article-list -->
+

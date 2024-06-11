@@ -1,0 +1,16 @@
+imp.json
+.venv
+lens
+*.txt
+.env
+my.txt
+*txt
+readme.txt
+# Ignore the mystuff folder and its contents
+mystuff/
+finalbin/
+# Ignore compiled Python files
+*.pyc
+# dotenv
+.env
+.env.*

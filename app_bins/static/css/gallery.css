@@ -1,0 +1,36 @@
+.images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px auto;
+  }
+  hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: #6562ff; /* Set the color of the line */
+    margin: 20px 0; /* Add margin above and below the line */
+    border-width: 0 0 2px;
+
+}
+  .gallery {
+    margin: 10px;
+    border: 1px solid #ccc;
+    max-width: 300px;
+    overflow: hidden;
+  }
+  
+  .gallery:hover {
+    border-color: #777;
+  }
+
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .desc {
+    padding: 15px;
+    text-align: center;
+  }
+  

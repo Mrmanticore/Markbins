@@ -1,0 +1,124 @@
+
+
+.blank-line {
+  margin: 40px;
+}
+
+hr {
+  border: none; /* Remove default border */
+  height: 1px; /* Set the height of the line */
+  background-color: #6562ff; /* Set the color of the line */
+  margin: 20px 0; /* Add margin above and below the line */
+  border-width: 0 0 2px;
+
+}
+
+
+
+
+
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.website-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Section Styles */
+.report-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.report-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Content Styles */
+.report-content {
+  text-align: left;
+}
+
+.report-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.report-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Button Styles */
+.get-start-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.get-start-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design for 578px */
+@media (max-width: 578px) {
+  .website-layout {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .report-container {
+      width: 90%;
+      padding: 15px;
+      
+  }
+
+  .report-title {
+      font-size: 20px;
+  }
+
+  .report-description {
+      font-size: 18px;
+      max-width: 100%; /* Ensure the paragraph text box fits smaller screens */
+
+  }
+
+  .get-start-button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+  .report-garbage-title {
+    color:rgb(5, 0, 252);/* Dodger Blue color for "Report Potholes" */
+
+    /* color: #FF6347; Tomato color for "Report Garbage" */
+}
+
+.report-potholes-title {
+  color:rgb(5, 0, 252);/* Dodger Blue color for "Report Potholes" */
+
+    /* color: #1E90FF; Dodger Blue color for "Report Potholes" */
+}
+}
