@@ -121,10 +121,10 @@ This project is a Django-based web application aimed at reducing the spread of g
     DEBUG=1
     SECRET_KEY=your_secret_key
     DATABASE_URL=postgres://username:password@host:port/dbname
-    TWITTER_API_KEY=your_twitter_api_key
-    TWITTER_API_SECRET_KEY=your_twitter_api_secret_key
-    TWITTER_ACCESS_TOKEN=your_twitter_access_token
-    TWITTER_ACCESS_TOKEN_SECRET=your_twitter_access_token_secret
+    firbase(Firestore database cridential information)
+   "type": "service_account",
+  "project_id": "example",
+  "private_key_id": "example",
     ```
 
 ### Deploying to Render
