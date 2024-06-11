@@ -161,23 +161,23 @@ def submit_tweet(request):
 # ----------------------------
 
 def guide_view(request):
-    # Your view logic here
-    return render(request, 'guide.html')  
+
+    return render(request, 'Guide.html')  
 
 def blogs_view(request):
-    # Your view logic here
+
     return render(request, 'blogs.html')  
 
 def video_tutorial_view(request):
-    # Your view logic here
+
     return render(request, 'VideoTutorial.html')  
 
 def about_view(request):
-    # Your view logic here
+
     return render(request, 'About.html')  
 
 def contact_view(request):
-    # Your view logic here
+
     return render(request, 'contact.html')  
 
 def mobile_view(request):
