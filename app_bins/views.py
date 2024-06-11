@@ -143,9 +143,9 @@ def submit_tweet(request):
 
         # Send the data to the Twitter bot server for each image
         
-        # url = 'https://1-mark-bins-bot.vercel.app/tweet'  # Update the URL if the server is hosted elsewhere
+
         url = 'https://markbins-bot.vercel.app/tweet'  # Update the URL if the server is hosted elsewhere
-        # url = 'http://127.0.0.1:5000/tweet'  # Update the URL if the server is hosted elsewhere
+        # url = 'http://127.0.0.1:5000/tweet'  # Update the URL if the server is hosted elsewhere(local host)
 
         for image_path in image_paths:
             payload = {'tweet': tweet_cleaned, 'email': email, 'image': image_path['data'], 'image_name': image_path['name']}

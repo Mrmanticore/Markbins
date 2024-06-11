@@ -44,7 +44,7 @@ This project is a Django-based web application aimed at reducing the spread of g
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/garbage-report-website.git
+    git clone https://github.com/Mrmanticore/Markbins.git
     cd garbage-report-website
     ```
 
