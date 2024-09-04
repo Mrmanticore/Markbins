@@ -1,6 +1,7 @@
 # MarkBins
  
 # Garbage Report Website
+#link: https://markbins-1eco.onrender.com/
 
 This project is a Django-based web application aimed at reducing the spread of garbage on roads. Users can report garbage by uploading a photo, specifying the location (latitude and longitude), and selecting a predefined tweet template. The application sends this data to a Twitter bot, which tweets the report and tags the municipal corporation for cleanup.
 
